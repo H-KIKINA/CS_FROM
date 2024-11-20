@@ -45,15 +45,15 @@ namespace CS_Form
                 //ボタンの追加
                 Controls.Add(testButton);
             }
-            string A = "テキストボックスです";
-            string C;
+           
+            
             //ラベルの作成
             _testLabel =
                new Test_Label("ラベルです", 10, 300, 100, 500);
             Controls.Add(_testLabel);
 
             //テキストボックスの作成
-            _textBox = new TestTextBox(A, 150, 400, 500, 200);
+            _textBox = new TestTextBox("テキストボックスです", 150, 400, 500, 200);
             Controls.Add(_textBox);
             //Label label = new Label();
             //label.Location = new Point(30, 400);
@@ -76,14 +76,20 @@ namespace CS_Form
             _testLabel.TextUpdate(str);
         }
 
-        public void TestTextBoxUpdate(string str)
+        public string ButtonLabelReplacement(string str) 
         {
-            _textBox.TextUpdate(str);
+            string s = _textBox.TextReplacement(str);
+            return s;
         }
-        public void TestButtonUpdate(string A)
-        {
-            _testButton.TextUpdate(A);
-        }
+       // public void TestTextBoxUpdate(string str)
+        //{
+       //   _textBox.TextUpdate(str);
+       // }
+       // public void TestButtonUpdate(string A)
+        //{
+        //    
+           // _testButton.TextUpdate(A);
+        //}
 
     }
 }
