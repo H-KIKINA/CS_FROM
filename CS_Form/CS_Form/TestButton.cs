@@ -27,6 +27,7 @@ namespace CS_Form
 
             Location = new Point(x,y);
             Size = new Size(width,height);
+            A =Text;
 
         }
         /// <summary>
@@ -34,12 +35,25 @@ namespace CS_Form
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
+        string A;
+        string C;
     public void OnClick(object sender, EventArgs e)
     {
             _form1.LabelTextUpdate(Text);
-    }
-       
+            _form1.TestTextBoxUpdate(Text);
+            _form1.TestButtonUpdate(A);
+        }
+
+        /// <summary>
+        /// ラベルの文字更新関数
+        /// </summary>
+        /// <param name="str"></param>
+        public void TextUpdate(string str)
+        {
+          A = str;
+        }
+
+
 
 
     }

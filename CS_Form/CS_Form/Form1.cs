@@ -14,11 +14,16 @@ namespace CS_Form
     {
         Test_Label _testLabel;
 
+        TestTextBox _textBox;
+        TestButton _testButton;
+
+
+
         public Form1()
         {
             InitializeComponent();
 
-            string [] strs = 
+            string[] strs =
             {  "あ",
                "か" ,
                "さ",
@@ -31,18 +36,25 @@ namespace CS_Form
                "わ",
             };
 
-            
+
             for (int i = 0; i <= 9; i++)
             {
-                
+                //ボタンの表示処理
                 TestButton testButton = new TestButton(this, strs[i], (i % 5) * 100, (i / 5) * 100, 100, 100);
-                
+
+                //ボタンの追加
                 Controls.Add(testButton);
             }
-
-             _testLabel =
-                new Test_Label("ラベルです", 10, 300, 100, 500);
+            string A = "テキストボックスです";
+            string C;
+            //ラベルの作成
+            _testLabel =
+               new Test_Label("ラベルです", 10, 300, 100, 500);
             Controls.Add(_testLabel);
+
+            //テキストボックスの作成
+            _textBox = new TestTextBox(A, 150, 400, 500, 200);
+            Controls.Add(_textBox);
             //Label label = new Label();
             //label.Location = new Point(30, 400);
             //label.Text = "ラベルです";
@@ -50,10 +62,11 @@ namespace CS_Form
             //Controls.Add(label);
 
 
-                //TestButton testButton2 = new TestButton(100,100,100,100);
+            //TestButton testButton2 = new TestButton(100,100,100,100);
 
-                //Controls.Add(testButton2);
+            //Controls.Add(testButton2);
         }
+
         /// <summary>
         /// ラベルの文字を更新
         /// </summary>
@@ -62,5 +75,15 @@ namespace CS_Form
         {
             _testLabel.TextUpdate(str);
         }
+
+        public void TestTextBoxUpdate(string str)
+        {
+            _textBox.TextUpdate(str);
+        }
+        public void TestButtonUpdate(string A)
+        {
+            _testButton.TextUpdate(A);
+        }
+
     }
 }
